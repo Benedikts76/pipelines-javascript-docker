@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: benediktspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: benediktspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: benediktspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: benediktspipelinesjavascriptdocker 
+          image: bjcontainerregistry.azurecr.io/benediktspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
